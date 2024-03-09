@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const router = require("./routes/blogRoutes.js");
+const router = require("./routes/BlogRoutes.js");
 // const blogRoutes = require("./blogRoute");
 
 require("dotenv").config();
@@ -25,9 +25,9 @@ db.once("open", () => {
 app.use(cors());
 app.use(bodyParser.json());
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.get("/", (req, res) => {
+  res.send("Hello World!");
+});
 app.use("/api", router);
 
 app.listen(port, () => {
